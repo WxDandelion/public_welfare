@@ -2,7 +2,7 @@
   "name": "public_welfare",
   "version": "1.0.0",
   "description": "a vue project called public_welfare",
-  "author": "wangxin <wxbyr@bupt.edu.cn>",
+  "author": "wxdandelion <wxbyr@bupt.edu.cn>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
