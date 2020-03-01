@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e738a94-ab8d-4f51-89e6-16b3e66b6545" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/needPublish/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/needPublish/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/home/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/home/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/home/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/needs/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/needs/index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,7 +92,7 @@
       <workItem from="1583039733791" duration="271000" />
       <workItem from="1583040104999" duration="579000" />
       <workItem from="1583041659359" duration="454000" />
-      <workItem from="1583042132355" duration="3605000" />
+      <workItem from="1583042132355" duration="6794000" />
     </task>
     <servers />
   </component>
