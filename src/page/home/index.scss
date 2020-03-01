@@ -1,0 +1,36 @@
+.home{
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/main.jpeg');
+  background-size: 100% 100%;
+  background-position: center;
+  position: absolute;
+  .home-web{
+    position: absolute;
+    left: 10px;
+    top: 5%;
+    transform: translateY(-100%);
+    width: 300px;
+    font-size: 14px;
+    color:white;
+  }
+  .home-logo{
+    position: absolute;
+    left: 160px;
+    top: 50%;
+    transform: translateY(-80%);
+    width: 300px;
+    font-size: 45px;
+    color:white;
+  }
+  .home-hello{
+    position: absolute;
+    right: -60px;
+    top: 20%;
+    transform: translateY(-100%);
+    width: 300px;
+    font-size: 30px;
+    color:white;
+  }
+}
+
