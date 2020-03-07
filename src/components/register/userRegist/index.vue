@@ -2,7 +2,7 @@
   @import '../index.scss';
 </style>
 <template>
-  <Form :model="userForm" :label-width="80">
+  <Form :model="userForm" :rules="rules" :label-width="80">
     <FormItem label="手机号">
         <Input v-model="userForm.phone" placeholder="请输入手机号"></Input>
     </FormItem>
@@ -27,16 +27,50 @@
 <script>
   export default {
     name: 'userRegist',
-    data () {
-      return {
+    props: {
+      userNameRules: {
+        type: Array,
+        default: () => {
+          return [
+            { required: true, message: '姓名不能为空', trigger: 'blur' }
+          ]}
+      },
+      passwordRules: {
+        type: Array,
+        default: () => {
+          return [
+            { required: true, message: '密码不能为空', trigger: 'blur' }
+          ]}
+      },
+      phoneNumRules: {
+        type: Array,
+        default: () => {
+          return [
+            { required: true, message: '手机号不能为空', trigger: 'blur' }
+          ]}
+      }
+    },
+  data () {
+    return {
         userForm: {
           name: "",
           userSex: "male",
           password: "",
+          secondPassword: "",
           phone: "",
+        },
+      }
+    },
+    computed: {
+      rules () {
+        return {
+          name: this.userNameRules,
+          password: this.passwordRules,
+          phone: this.phoneNumRules
         }
       }
     },
+
     methods: {},
   }
 </script>
