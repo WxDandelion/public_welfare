@@ -38,16 +38,16 @@
           secondPassword: "",
           phone: "",
         },
-      }
-    },
-      ruleLists: {
+        ruleLists: {
           phone: [
               { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
           name: [
               { required: true, message: '姓名不能为空', trigger: 'blur' }
           ]
-      },
+        },
+      }
+    },
     computed: {
 
     },

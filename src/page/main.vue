@@ -1,4 +1,3 @@
-<!-- 该页面暂时不用 -->
 <style scoped>
 .layout{
   width: 100%;
@@ -25,14 +24,19 @@
   margin-right: 20px;
 }
 .content {
+  width: 100%;
   height: 64px;
+}
+.page {
+  width: 100%;
+  height: calc(100vh - 64px);
 }
 </style>
 <template>
   <div>
     <navHeader></navHeader>
     <div class="content"></div>
-    <router-view></router-view>
+    <router-view class="page"></router-view>
   </div>
 </template>
 <script>
