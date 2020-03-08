@@ -2,11 +2,11 @@
   @import '../index.scss';
 </style>
 <template>
-  <Form :model="userForm" :label-width="80">
-    <FormItem label="手机号">
+  <Form ref="userRegist":model="userForm" :rules="ruleLists" :label-width="80" >
+    <FormItem label="手机号" prop="phone">
         <Input v-model="userForm.phone" placeholder="请输入手机号"></Input>
     </FormItem>
-    <FormItem label="姓名">
+    <FormItem label="姓名" prop="name">
         <Input v-model="userForm.name" placeholder="请输入负责人姓名"></Input>
     </FormItem>
     <FormItem label="性别">
@@ -27,16 +27,33 @@
 <script>
   export default {
     name: 'userRegist',
-    data () {
-      return {
+    props: {
+    },
+  data () {
+    return {
         userForm: {
           name: "",
           userSex: "male",
           password: "",
+          secondPassword: "",
           phone: "",
-        }
+        },
       }
     },
+      ruleLists: {
+          phone: [
+              { required: true, message: '手机号不能为空', trigger: 'blur' }
+          ],
+          name: [
+              { required: true, message: '姓名不能为空', trigger: 'blur' }
+          ]
+      },
+    computed: {
+
+    },
+    mounted() {
+          this.getUserForm();
+      },
     methods: {},
   }
 </script>

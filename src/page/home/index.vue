@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" xmlns="http://www.w3.org/1999/html">
   @import './index.scss';
 </style>
 
@@ -14,7 +14,12 @@
     <div class="home-hello" >
       你好，世界!
     </div>
-
+  <div class="home-volunteer">
+    <Icon custom="i-icon md-heart-outline" size="24" />
+    <Button @click="toVol">申请志愿者</Button>
+    <Button @click="needsPublish">发布需求</Button>
+    <Button @click="blockChain">区块链</Button>
+  </div>
   </div>
 </template>
 <script>
@@ -23,6 +28,11 @@
     props: {},
     data () {
       return {}
+    },
+    methods: {
+      toVol () {
+        this.$router.push('/volunteer');
+      }
     }
   }
 
