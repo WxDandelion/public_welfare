@@ -4,6 +4,8 @@ import Main from "@/page/main.vue"
 import iView from 'iview';
 import register from '@/page/register';
 import volunteer from  '@/page/volunteer';
+import needs from '@/page/needs';
+import needPublish from '@/page/needPublish';
 
 const Home = r => require.ensure([], () => r(require('@/page/home')), 'Home');
 const Needs = r => require.ensure([], () => r(require('@/page/needs')), 'Needs');
@@ -38,6 +40,10 @@ const router = new Router({
     path: '/volunteer',
       name: 'volunteer',
       component: volunteer,
+    },{
+      path: '/needPublish',
+      name: 'needPublish',
+      component: needPublish,
     }]
 });
 

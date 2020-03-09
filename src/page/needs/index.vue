@@ -119,17 +119,16 @@
           </div>
         </div>
       </div>
-      <needPublish></needPublish>
     </div>
   </div>
 </template>
 <script>
-  import needPublish from '@/components/needPublish';
+  //import needPublish from '@/components/needPublish';
   export default {
     name: 'needs',
-    components: {
+   /* components: {
       needPublish
-    },
+    },*/
     methods:{
       publish() {
         this.$router.push('/needPublish');

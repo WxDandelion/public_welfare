@@ -17,14 +17,19 @@
   <div class="home-volunteer">
     <Icon custom="i-icon md-heart-outline" size="24" />
     <Button @click="toVol">申请志愿者</Button>
-    <Button @click="needsPublish">发布需求</Button>
+    <Button @click="needPublish">发布需求</Button>
     <Button @click="blockChain">区块链</Button>
   </div>
+    <needPublish></needPublish>
   </div>
 </template>
 <script>
+  import needPublish from '@/components/needPublish';
   export default {
     name: 'Home',
+    components: {
+          needPublish
+    },
     props: {},
     data () {
       return {}
@@ -32,7 +37,11 @@
     methods: {
       toVol () {
         this.$router.push('/volunteer');
+      },
+      needPublish () {
+            this.$router.push('/needPublish');
       }
+
     }
   }
 
