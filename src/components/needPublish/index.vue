@@ -28,7 +28,7 @@
 </template>
 <script>
   export default {
-    name: 'needPubish',
+    name: 'needPublish',
     data () {
       return {
         needForm: {
