@@ -24,12 +24,12 @@
   </div>
 </template>
 <script>
-  import needPublish from '@/components/needPublish';
+  //import needPublish from '@/components/needPublish';
   export default {
     name: 'Home',
-    components: {
+    /*components: {
           needPublish
-    },
+    },*/
     props: {},
     data () {
       return {}
