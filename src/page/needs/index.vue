@@ -3,10 +3,10 @@
 </style>
 
 <template>
-  <div>
+  <div class="needs-page">
     <div class="needBox">
       <Button type="primary" @click="publish" class="pos_fixed">+发布需求</Button>
-
+      <!-- start 使用iview UI 组件修改-->
       <div class="activity-tripe">
         <form id="activity-search-form" method="post">
           <div class="search-itemlist-box">
@@ -26,117 +26,82 @@
             <input style="display:none;">
           </div>
         </form>
-        <div class="activity-itemlist-box">
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
+        <!-- end -->
+        <!-- 公益活动card -->
+        <div class="activity-box">
+          <Card class="activity-item" v-for="(item,i) in activities" :key="i">
+            <div @click="toDetailPage">
+                <img :src= "item.img" class="activity-img">
+                <h3 class="activity-name">{{ item.name }}</h3>
+                <div class="activity-day">
+                  <p>报名截止：</p>
+                  <Progress :percent="25" hide-info style="width: 65%"/>
+                  <p>{{ item.day }}天</p>
+                </div>
+                <div class="activity-info">
+                  <p>{{ item.address }}</p>
+                  <p>参与人数：{{ item.numOfPeople }}</p>
+                  <p>浏览量：{{ item.views }}</p>
+                </div>
             </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
-          <div class="activity-item-box" onclick="window.location.href='#'">
-            <div class="activity-item-img" style="background-image:url(http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300)"></div>
-            <h3 class="activity-item-box-h3">志愿活动名称</h3>
-            <div class="activity-item-day">
-              <span class="activity-item-day-span">报名截止：</span>
-              <p class="activity-item-day-p"><i style="width:52.459999999999994%;"></i></p>
-              <span class="activity-item-day-span">23天</span>
-            </div>
-            <p class="activity-item-other"><a class="activity-item-other-city"><abbr title="xx省xx市">xx省xx市</abbr></a><a class="activity-item-other-join">参与人数：0</a><a class="activity-item-other-number">浏览量：6</a></p>
-          </div>
+          </Card>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-  //import needPublish from '@/components/needPublish';
   export default {
     name: 'needs',
-   /* components: {
-      needPublish
-    },*/
+    data () {
+      return {
+        activities: [{
+          id: '111',
+          img: 'http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300',
+          name: '活动名称',
+          day: '23',
+          numOfPeople: '12',
+          views: '6',
+          address: 'xx省xx市',
+        }, {
+          id: '111',
+          img: 'http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300',
+          name: '活动名称',
+          day: '23',
+          numOfPeople: '12',
+          views: '6',
+          address: 'xx省xx市',
+        }, {
+          id: '111',
+          img: 'http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300',
+          name: '活动名称',
+          day: '23',
+          numOfPeople: '12',
+          views: '6',
+          address: 'xx省xx市',
+        }, {
+          id: '111',
+          img: 'http://image.zyh365.com/vms/2020/07//1583654851582cac13a16dbbd4937ac8ab0a5261eecba?imageView2/2/w/400/h/300',
+          name: '活动名称',
+          day: '23',
+          numOfPeople: '12',
+          views: '6',
+          address: 'xx省xx市',
+        }]
+      }
+    },
     methods:{
       publish() {
         this.$router.push('/needPublish');
-      }},
-    props: {},
-    data () {
-      return {}
-    }
+      },
+      toDetailPage() {
+        console.log("aaaa");
+        // 跳转详情页
+        // 从e中取对应item的id,拼接链接，跳转
+        this.$router.push('/');
+      }
+    },
+    props: {}
   }
 
 </script>

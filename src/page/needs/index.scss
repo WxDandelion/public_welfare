@@ -1,5 +1,38 @@
-.pos_fixed
-{
+.needs-page {
+  :global {
+    .ivu-card-body {
+      padding: 0 0;
+    }
+  }
+}
+.activity-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.activity-item {
+  width: 32%;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+  .activity-day {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5px 5px;
+    color: #999;
+  }
+  .activity-info {
+    display: flex;
+    justify-content: space-around;
+    color: #999;
+  }
+}
+
+.pos_fixed {
   position:fixed;
   top: 50%;
   right:5px;
@@ -8,22 +41,6 @@
 .activity-tripe{
   margin:0 auto;
   width:1190px;
-}
-
-//分类顶栏
-select{
-  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
-  border: 1px solid #dcdddd;
-  /*很关键：将默认的select选择框样式清除*/
-  appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance:none;
-  background-color:white;
-  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
-  padding-left:30px;padding-right:40px;
-  /*统一样式*/
-  height:30px;
-  text-align:center;color:#666;
 }
 
 .search-order-ullist{
@@ -110,79 +127,6 @@ select{
   background-color:#2d8cf0;
   cursor:pointer;
 }
-//内容
-.activity-itemlist-box{
-  margin-left:-10px;
-  width:1200px;
-  font-size:0px;
-}
-.activity-item-box{
-  display:inline-block;
-  margin-left:10px;
-  margin-bottom:20px;
-  width:388px;height:375px;
-  border:1px solid #dcdddd;
-  border-radius:5px;
-  -moz-border-radius:5px; /* Old Firefox */
-  overflow:hidden;
-  cursor:pointer;
-  background-color:white;
-}
-.activity-item-box:hover{
-  background-color:#eee;
-}
-.activity-item-img{
-  width:100%;height:265px;
-  background-size:cover;
-  background-position:center;
-}
-.activity-item-box-h3,.info-item-right-h3{
-  display:inline-block;
-  width:368px;height:41px;
-  margin:0px 10px;
-  line-height:41px;font-weight:400;font-size:18px;
-  overflow:hidden;
-}
-.activity-item-day{
-  margin:0px 10px;
-}
-.activity-item-day-span{
-  float:left;
-  color:#999;font-size:14px;
-}
-.activity-item-day-p{
-  float:left;
-  margin:5px 10px;
-  width:216px;height:10px;
-  border-radius:10px;
-  -moz-border-radius:10px; /* Old Firefox */
-  background-color:#e7e7e7;
-  overflow:hidden;
-}
-.activity-item-day-p i{
-  display:block;
-  height:10px;width:50%;
-  border-radius:10px;
-  -moz-border-radius:10px; /* Old Firefox */
-  background-color:#2d8cf0;
-}
-.activity-item-other{
-  float:right;
-  margin:14px 10px;
-  width:368px;
-}
-.activity-item-other a{
-  position:relative;
-  float:left;
-  display:block;
-  padding-left:30px;
-  height:20px;
-  font-size:14px;line-height:20px;color:#999;
-}
-.activity-item-other i{position:absolute;left:8px;display:block;width:20px;height:20px;}
-.activity-item-other-city{width:30%;overflow:hidden;}
-.activity-item-other-join{width:30%;}
-.activity-item-other-number{width:30%;}
 
 
 
