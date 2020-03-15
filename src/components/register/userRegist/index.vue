@@ -43,13 +43,6 @@
               { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
           name: [
-<<<<<<< HEAD
-            { required: true, message: '姓名不能为空', trigger: 'blur' }
-          ],
-          password: [
-            { required: true, message: '密码不能为空', trigger: 'blur' }
-          ]
-=======
               { required: true, message: '姓名不能为空', trigger: 'blur' }
           ],
           userSex: [
@@ -61,7 +54,6 @@
           secondPassword: [
                 { required: true, message: '确认密码不能为空', trigger: 'blur' }
             ]
->>>>>>> 83b4f9efbc7b871b88589d592bdead5ff01dcb7d
         },
       }
     },

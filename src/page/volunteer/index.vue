@@ -41,10 +41,10 @@
 <script>
   import backButton from '@/components/backButton';
     export default {
-        name: "volunteer",
-        component:{
-          backButton
-        },
+      name: "volunteer",
+      components:{
+        backButton
+      },
       data () {
         return {
           volunteerForm: {
