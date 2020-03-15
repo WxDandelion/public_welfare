@@ -9,16 +9,16 @@
     <FormItem label="姓名" prop="name">
         <Input v-model="userForm.name" placeholder="请输入负责人姓名"></Input>
     </FormItem>
-    <FormItem label="性别">
+    <FormItem label="性别" prop="userSex">
         <RadioGroup v-model="userForm.userSex">
             <Radio label="male">男</Radio>
             <Radio label="female">女</Radio>
         </RadioGroup>
     </FormItem>
-    <FormItem label="密码">
+    <FormItem label="密码" prop="password">
         <Input v-model="userForm.password" placeholder="请输入密码"></Input>
     </FormItem>
-    <FormItem label="确认密码">
+    <FormItem label="确认密码" prop="secondPassword">
         <Input v-model="userForm.secondPassword" placeholder="请再次输入密码进行确认"></Input>
     </FormItem>
     <Button class="sub-button" type="primary">提交</Button>
@@ -44,7 +44,16 @@
           ],
           name: [
               { required: true, message: '姓名不能为空', trigger: 'blur' }
-          ]
+          ],
+          userSex: [
+                { required: true, message: '性别不能为空', trigger: 'blur' }
+            ],
+          password: [
+                { required: true, message: '密码不能为空', trigger: 'blur' }
+            ],
+          secondPassword: [
+                { required: true, message: '确认密码不能为空', trigger: 'blur' }
+            ]
         },
       }
     },
