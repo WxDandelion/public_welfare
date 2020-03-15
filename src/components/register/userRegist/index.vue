@@ -43,7 +43,10 @@
               { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
           name: [
-              { required: true, message: '姓名不能为空', trigger: 'blur' }
+            { required: true, message: '姓名不能为空', trigger: 'blur' }
+          ],
+          password: [
+            { required: true, message: '密码不能为空', trigger: 'blur' }
           ]
         },
       }

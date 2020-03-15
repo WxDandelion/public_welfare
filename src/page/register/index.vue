@@ -22,12 +22,14 @@
   import userRegist from '@/components/register/userRegist';
   import communityRegist from '@/components/register/communityRegist';
   import workerRegist from '@/components/register/workerRegist';
+  import backButton from '@/components/backButton';
   export default {
     name: "register",
     components: {
       userRegist,
       communityRegist,
-      workerRegist
+      workerRegist,
+      backButton
     },
     methods: {
     }

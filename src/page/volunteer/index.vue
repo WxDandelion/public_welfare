@@ -33,14 +33,18 @@
       <FormItem label="所在地区">
         <Input v-model="volunteerForm.address" placeholder="请输入所在地区"></Input>
       </FormItem>
-      <Button class="sub-button" type="primary">提交</Button>
+      <Button class="sub-button" type="primary">提交</Button><backButton></backButton>
     </Form>
   </div>
 </template>
 
 <script>
+  import backButton from '@/components/backButton';
     export default {
         name: "volunteer",
+        component:{
+          backButton
+        },
       data () {
         return {
           volunteerForm: {
