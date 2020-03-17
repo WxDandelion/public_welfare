@@ -6,10 +6,12 @@ import register from '@/page/register';
 import volunteer from  '@/page/volunteer';
 import needs from '@/page/needs';
 import needPublish from '@/page/needPublish';
+import needsDetail from '@/page/needsDetail';
 
 const Home = r => require.ensure([], () => r(require('@/page/home')), 'Home');
 const Needs = r => require.ensure([], () => r(require('@/page/needs')), 'Needs');
 const News = r => require.ensure([], () => r(require('@/page/news')), 'News');
+const NeedsNDetail = r => require.ensure([], () => r(require('@/page/needsDetail')), 'NeedsDetail');
 
 
 Vue.use(Router);
@@ -31,6 +33,10 @@ const router = new Router({
       path: '/news',
       name: 'news',
       component: News,
+    },{
+      path: '/needsDetail',
+      name: 'needsDetail',
+      component: NeedsNDetail,
     }]
   }, {
     path: '/register',
