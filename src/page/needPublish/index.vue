@@ -5,7 +5,6 @@
   <div class="publishBox">
     <h2>发布需求</h2>
     <Form :model="needForm" :label-width="80">
-
       <FormItem label="需求名称">
         <Input v-model="needForm.needName" placeholder="请输出需求名称"></Input>
       </FormItem>
@@ -24,15 +23,10 @@
       <FormItem label="截止时间">
         <Input v-model="needForm.endTime" placeholder="请输入需求截止时间"></Input>
       </FormItem>
-<<<<<<< HEAD
       <Button class="sub-button" type="primary">提交</Button>
-    </Form><backButton></backButton>
-=======
-      <Button type="primary" class="sub-button">提交</Button><backButton></backButton>
-    </Form>
->>>>>>> ec8724b14bc32515eabda134d8b6de557c18770e
+      <backButton></backButton>
+      </Form>
   </div>
-
 </template>
 <script>
   import backButton from '@/components/backButton';

@@ -15,6 +15,7 @@ const Needs = r => require.ensure([], () => r(require('@/page/needs')), 'Needs')
 const News = r => require.ensure([], () => r(require('@/page/news')), 'News');
 const NeedsNDetail = r => require.ensure([], () => r(require('@/page/needsDetail')), 'NeedsDetail');
 const MyWelfare = r => require.ensure([], () => r(require('@/page/myWelfare')), 'MyWelfare');
+//const WelfarePublish = r => require.ensure([], () => r(require('@/page/welfarePublish')), 'WelfarePublish');
 
 
 Vue.use(Router);
@@ -63,7 +64,7 @@ const router = new Router({
     },{
       path: '/myWelfare',
       name: 'myWelfare',
-      component: myWelfare,
+      component: MyWelfare,
     },{
       path: '/welfarePublish',
       name: 'welfarePublish',
