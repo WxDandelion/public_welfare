@@ -48,7 +48,7 @@
     },
     methods: {
       handleSubmit() {
-
+        this.$router.push('/myWelfare');
       },
       routeTo() {
         this.$router.push('/register');

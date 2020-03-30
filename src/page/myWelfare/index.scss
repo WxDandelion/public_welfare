@@ -1,0 +1,88 @@
+.needs-page {
+  :global {
+    .ivu-card-body {
+      padding: 0 0;
+    }
+  }
+}
+.pos_fixed {
+  position:fixed;
+  top: 50%;
+  right:5px;
+}
+.activity-tripe{
+  margin:0 auto;
+  width:1190px;
+  padding:40px 0px;
+  min-height:700px;
+  font-size:0px;
+}
+//左半部分
+.activitydetail-left{
+  display:inline-block;
+  width:390px;font-size:16px;
+}
+.activity-item-info {
+  width:380px;font-size:16px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+  .activity-day {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px 5px;
+    color: #999;
+  }
+  .activity-info {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    color: #999;
+  }
+}
+//右半部分
+.activitydetail-info-box{
+  display:inline-block;
+  padding:0px 20px;
+  width:760px;
+  font-size:14px;
+  overflow:hidden;
+  vertical-align:top;
+}
+//发布公益
+.button-publish{
+  width: 47%;
+  height: 100px;
+  margin-left:10px;
+  font-size:40px;
+}
+//已加入的公益
+.activity-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.activity-item {
+  width:47%;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+  .activity-day {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5px 5px;
+    color: #999;
+  }
+  .activity-info {
+    display: flex;
+    justify-content: space-around;
+    color: #999;
+  }
+}
