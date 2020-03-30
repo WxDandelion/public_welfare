@@ -22,13 +22,17 @@
         <Input v-model="needForm.endtime" placeholder="请输入需求截止时间"></Input>
       </FormItem>
       <Button class="sub-button" type="primary">提交</Button>
-    </Form>
+    </Form><backButton></backButton>
   </div>
 
 </template>
 <script>
+  import backButton from '@/components/backButton';
   export default {
     name: 'needPublish',
+    components:{
+      backButton
+    },
     data () {
       return {
         needForm: {

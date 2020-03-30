@@ -29,8 +29,8 @@
     name: 'userRegist',
     props: {
     },
-  data () {
-    return {
+    data () {
+      return {
         userForm: {
           name: "",
           userSex: "male",
@@ -40,29 +40,28 @@
         },
         ruleLists: {
           phone: [
-              { required: true, message: '手机号不能为空', trigger: 'blur' }
+            { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
           name: [
-              { required: true, message: '姓名不能为空', trigger: 'blur' }
+            { required: true, message: '姓名不能为空', trigger: 'blur' }
           ],
           userSex: [
-                { required: true, message: '性别不能为空', trigger: 'blur' }
-            ],
+            { required: true, message: '性别不能为空', trigger: 'blur' }
+          ],
           password: [
-                { required: true, message: '密码不能为空', trigger: 'blur' }
-            ],
+            { required: true, message: '密码不能为空', trigger: 'blur' }
+          ],
           secondPassword: [
-                { required: true, message: '确认密码不能为空', trigger: 'blur' }
-            ]
+            { required: true, message: '确认密码不能为空', trigger: 'blur' }
+          ]
         },
       }
     },
     computed: {
-
     },
     mounted() {
-          this.getUserForm();
-      },
+      this.getUserForm();
+    },
     methods: {},
   }
 </script>

@@ -14,7 +14,7 @@
         <TabPane label="社工" name="worker">
           <workerRegist></workerRegist>
         </TabPane>
-    </Tabs>
+    </Tabs><backButton></backButton>
   </div>
 </template>
 

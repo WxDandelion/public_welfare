@@ -40,6 +40,9 @@ const router = new Router({
     path: '/volunteer',
       name: 'volunteer',
       component: volunteer,
+      meta: {
+        needLogin : true
+      },
     },{
       path: '/needPublish',
       name: 'needPublish',

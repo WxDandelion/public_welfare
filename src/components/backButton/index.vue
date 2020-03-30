@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Button class="sub-button">返回</Button>
+      <Button class="sub-button" type="primary" @click="$router.back()">返回</Button>
     </div>
 </template>
 
@@ -13,6 +13,6 @@
 <style scoped>
   .sub-button {
     display: block;
-    margin: 0 auto;
+    margin: 5px auto;
   }
 </style>
