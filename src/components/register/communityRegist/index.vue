@@ -2,7 +2,7 @@
   @import '../index.scss';
 </style>
 <template>
-  <Form :model="communityForm" :rules="ruleLists" :label-width="80">
+  <Form ref="socialForm" :model="communityForm" :rules="ruleLists" :label-width="80" @keydown.enter.native="handleSubmit">
     <FormItem label="社区名称" prop="communityName">
         <Input v-model="communityForm.communityName" placeholder="请输入社区名称"></Input>
     </FormItem>
@@ -34,7 +34,7 @@
     <FormItem label="确认密码" prop="secondPassword">
         <Input v-model="communityForm.secondPassword" placeholder="请再次输入密码进行确认"></Input>
     </FormItem>
-    <Button class="sub-button" type="primary">提交</Button>
+    <Button @click="handleSubmit" class="sub-button" type="primary">提交</Button>
   </Form>
 </template>
 <script>
@@ -84,6 +84,25 @@
       }
 
     },
-    methods: {},
+    methods: {
+      handleSubmit () {
+        this.$refs.socialForm.validate(async (valid) => {
+          if (valid) {
+            let data = {
+              method: 'post',
+              params: this.communityForm,
+              url: '/socialWorkerRegister',
+            };
+            let res = await util.httpReq(data);
+            if (res === 'success') {
+              this.$Message.success('成功!');
+              this.$router.push({
+                path: '/home',
+              });
+            }
+          }
+        })
+      }
+    },
   }
 </script>

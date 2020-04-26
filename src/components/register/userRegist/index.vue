@@ -2,7 +2,7 @@
   @import '../index.scss';
 </style>
 <template>
-  <Form ref="userRegist":model="userForm" :rules="ruleLists" :label-width="80" >
+  <Form ref="accountForm" :model="userForm" :rules="ruleLists" :label-width="80" @keydown.enter.native="handleSubmit">
     <FormItem label="手机号" prop="phone">
         <Input v-model="userForm.phone" placeholder="请输入手机号"></Input>
     </FormItem>
@@ -21,7 +21,7 @@
     <FormItem label="确认密码" prop="secondPassword">
         <Input v-model="userForm.secondPassword" placeholder="请再次输入密码进行确认"></Input>
     </FormItem>
-    <Button class="sub-button" type="primary">提交</Button>
+    <Button @click="handleSubmit" class="sub-button" type="primary">提交</Button>
   </Form>
 </template>
 <script>
@@ -62,6 +62,25 @@
     mounted() {
       this.getUserForm();
     },
-    methods: {},
+    methods: {
+      handleSubmit () {
+        this.$refs.accountForm.validate(async (valid) => {
+          if (valid) {
+            let data = {
+              method: 'post',
+              params: this.userForm,
+              url: '/accountRegister',
+            };
+            let res = await util.httpReq(data);
+            if (res === 'success') {
+              this.$Message.success('成功!');
+              this.$router.push({
+                path: '/home',
+              });
+            }
+          }
+        })
+      }
+    },
   }
 </script>
