@@ -7,7 +7,7 @@
         <Input v-model="workerForm.name" placeholder="请输入姓名"></Input>
     </FormItem>
     <FormItem label="身份证" prop="cardId">
-        <Input v-model="workerForm.cardId" placeholder="请输入身份证"></Input>
+        <Input v-model="workerForm.identity" placeholder="请输入身份证"></Input>
     </FormItem>
     <FormItem label="性别" prop="userSex">
         <RadioGroup v-model="workerForm.userSex">
@@ -16,7 +16,7 @@
         </RadioGroup>
     </FormItem>
     <FormItem label="出生日期" prop="birth">
-      <DatePicker v-model="workerForm.birth" type="date" placeholder="请选择出生日期" style="width: 200px">
+      <DatePicker v-model="workerForm.birthday" type="date" placeholder="请选择出生日期" style="width: 200px">
       </DatePicker>
     </FormItem>
     <FormItem label="手机号" prop="phone">
@@ -39,11 +39,11 @@
       return {
         workerForm: {
           name: "",
-          cardId: "",
+          identity: "",
           userSex: "male",
           password: "",
           phone: "",
-          birth: "",
+          birthday: "",
         },
         ruleLists: {
           phone: [
@@ -61,10 +61,10 @@
           secondPassword: [
             { required: true, message: '确认密码不能为空', trigger: 'blur' }
           ],
-          cardId: [
+          identity: [
             { required: true, message: '身份证号不能为空', trigger: 'blur' }
           ],
-          birth: [
+          birthday: [
             { required: true, message: '出生日期不能为空', trigger: 'blur', pattern: /.+/}
           ]
         },

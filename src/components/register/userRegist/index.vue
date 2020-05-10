@@ -7,7 +7,7 @@
         <Input v-model="userForm.phone" placeholder="请输入手机号"></Input>
     </FormItem>
     <FormItem label="姓名" prop="name">
-        <Input v-model="userForm.name" placeholder="请输入负责人姓名"></Input>
+        <Input v-model="userForm.username" placeholder="请输入负责人姓名"></Input>
     </FormItem>
     <FormItem label="性别" prop="userSex">
         <RadioGroup v-model="userForm.userSex">
@@ -33,7 +33,7 @@
     data () {
       return {
         userForm: {
-          name: "",
+          username: "",
           userSex: "male",
           password: "",
           secondPassword: "",
@@ -43,7 +43,7 @@
           phone: [
             { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
-          name: [
+          username: [
             { required: true, message: '姓名不能为空', trigger: 'blur' }
           ],
           userSex: [

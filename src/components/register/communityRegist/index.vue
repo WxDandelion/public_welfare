@@ -10,7 +10,7 @@
         <Input v-model="communityForm.address" placeholder="请输入社区地址"></Input>
     </FormItem>
     <FormItem label="负责人姓名" prop="name">
-        <Input v-model="communityForm.name" placeholder="请输入负责人姓名"></Input>
+        <Input v-model="communityForm.leaderName" placeholder="请输入负责人姓名"></Input>
     </FormItem>
     <FormItem label="性别" prop="userSex">
         <RadioGroup v-model="communityForm.userSex">
@@ -19,14 +19,14 @@
         </RadioGroup>
     </FormItem>
     <FormItem label="出生日期" prop="birth">
-      <DatePicker v-model="communityForm.birth" type="date" placeholder="请选择出生日期" style="width: 200px">
+      <DatePicker v-model="communityForm.birthday" type="date" placeholder="请选择出生日期" style="width: 200px">
       </DatePicker>
     </FormItem>
     <FormItem label="联系电话" prop="phone">
         <Input v-model="communityForm.phone" placeholder="请输入联系电话"></Input>
     </FormItem>
     <FormItem label="用户名" prop="userName">
-        <Input v-model="communityForm.userName" placeholder="请输入用户名"></Input>
+        <Input v-model="communityForm.username" placeholder="请输入用户名"></Input>
     </FormItem>
     <FormItem label="密码" prop="password">
         <Input v-model="communityForm.password" placeholder="请输入密码"></Input>
@@ -45,19 +45,19 @@
       return {
         communityForm: {
           communityName: "",
-          name: "",
+          leaderName: "",
           address: "",
           userSex: "male",
-          userName: "",
+          username: "",
           password: "",
           phone: "",
-          birth: "",
+          birthday: "",
         },
         ruleLists: {
           phone: [
             { required: true, message: '联系电话不能为空', trigger: 'blur' }
           ],
-          name: [
+          leaderName: [
             { required: true, message: '负责人姓名不能为空', trigger: 'blur' }
           ],
           userSex: [
@@ -69,10 +69,10 @@
           secondPassword: [
             { required: true, message: '确认密码不能为空', trigger: 'blur' }
           ],
-          userName: [
+          username: [
             { required: true, message: '用户名不能为空', trigger: 'blur' }
           ],
-          birth: [
+          birthday: [
             { required: true, message: '出生日期不能为空', trigger: 'blur', pattern: /.+/}
           ],
           communityName: [
