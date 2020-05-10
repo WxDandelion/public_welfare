@@ -4,13 +4,13 @@
 <template>
   <Form ref="accountForm" :model="userForm" :rules="ruleLists" :label-width="80" @keydown.enter.native="handleSubmit">
     <FormItem label="手机号" prop="phone">
-        <Input v-model="userForm.phone" placeholder="请输入手机号"></Input>
+        <Input v-model="userForm.username" placeholder="请输入手机号"></Input>
     </FormItem>
     <FormItem label="姓名" prop="name">
-        <Input v-model="userForm.username" placeholder="请输入负责人姓名"></Input>
+        <Input v-model="userForm.name" placeholder="请输入负责人姓名"></Input>
     </FormItem>
     <FormItem label="性别" prop="userSex">
-        <RadioGroup v-model="userForm.userSex">
+        <RadioGroup v-model="userForm.isMale">
             <Radio label="male">男</Radio>
             <Radio label="female">女</Radio>
         </RadioGroup>
@@ -33,20 +33,20 @@
     data () {
       return {
         userForm: {
-          username: "",
-          userSex: "male",
+          name: "",
+          isMale: "male",
           password: "",
           secondPassword: "",
-          phone: "",
+          username: "",
         },
         ruleLists: {
-          phone: [
+          username: [
             { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
-          username: [
+          name: [
             { required: true, message: '姓名不能为空', trigger: 'blur' }
           ],
-          userSex: [
+          isMale: [
             { required: true, message: '性别不能为空', trigger: 'blur' }
           ],
           password: [

@@ -10,7 +10,7 @@
         <Input v-model="workerForm.identity" placeholder="请输入身份证"></Input>
     </FormItem>
     <FormItem label="性别" prop="userSex">
-        <RadioGroup v-model="workerForm.userSex">
+        <RadioGroup v-model="workerForm.isMale">
             <Radio label="male">男</Radio>
             <Radio label="female">女</Radio>
         </RadioGroup>
@@ -20,7 +20,7 @@
       </DatePicker>
     </FormItem>
     <FormItem label="手机号" prop="phone">
-        <Input v-model="workerForm.phone" placeholder="请输入手机号"></Input>
+        <Input v-model="workerForm.username" placeholder="请输入手机号"></Input>
     </FormItem>
     <FormItem label="密码" prop="password">
         <Input v-model="workerForm.password" placeholder="请输入密码"></Input>
@@ -40,19 +40,19 @@
         workerForm: {
           name: "",
           identity: "",
-          userSex: "male",
+          isMale: "male",
           password: "",
-          phone: "",
+          username: "",
           birthday: "",
         },
         ruleLists: {
-          phone: [
+          username: [
             { required: true, message: '手机号不能为空', trigger: 'blur' }
           ],
           name: [
             { required: true, message: '姓名不能为空', trigger: 'blur' }
           ],
-          userSex: [
+          isMale: [
             { required: true, message: '性别不能为空', trigger: 'blur' }
           ],
           password: [

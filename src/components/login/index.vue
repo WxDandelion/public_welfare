@@ -13,7 +13,7 @@
       <div class="loginForm">
         <Form ref="loginForm" :model="loginForm">
           <FormItem prop="userName">
-            <Input v-model="loginForm.phone" placeholder="请输入用户名/手机号">
+            <Input v-model="loginForm.username" placeholder="请输入用户名/手机号">
               <span slot="prepend">
                 <Icon :size="16" type="ios-person"></Icon>
               </span>
@@ -35,20 +35,36 @@
 </template>
 
 <script>
+  import util from "../../util/util";
   export default {
     name: 'loginModal',
     data() {
       return {
         isLoginVisible: false,
         loginForm: {
-          phone: "",
+          username: "",
           password: "",
         }
       }
     },
     methods: {
       handleSubmit() {
-        this.$router.push('/myWelfare');
+        this.$refs.loginForm.validate(async (valid) => {
+          if (valid) {
+            let data = {
+              method: 'post',
+              params: this.loginForm,
+              url: '/user/login',
+            };
+            let res = await util.httpReq(data);
+            if (res === 'success') {
+              this.$Message.success('成功!');
+              this.$router.push({
+                path: '/myWelfare',
+              });
+            }
+          }
+        })
       },
       routeTo() {
         this.$router.push('/register');

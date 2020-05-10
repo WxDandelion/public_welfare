@@ -4,7 +4,7 @@
 <template>
   <Form ref="socialForm" :model="communityForm" :rules="ruleLists" :label-width="80" @keydown.enter.native="handleSubmit">
     <FormItem label="社区名称" prop="communityName">
-        <Input v-model="communityForm.communityName" placeholder="请输入社区名称"></Input>
+        <Input v-model="communityForm.name" placeholder="请输入社区名称"></Input>
     </FormItem>
     <FormItem label="社区地址" prop="address">
         <Input v-model="communityForm.address" placeholder="请输入社区地址"></Input>
@@ -13,7 +13,7 @@
         <Input v-model="communityForm.leaderName" placeholder="请输入负责人姓名"></Input>
     </FormItem>
     <FormItem label="性别" prop="userSex">
-        <RadioGroup v-model="communityForm.userSex">
+        <RadioGroup v-model="communityForm.isMale">
             <Radio label="male">男</Radio>
             <Radio label="female">女</Radio>
         </RadioGroup>
@@ -44,10 +44,10 @@
     data () {
       return {
         communityForm: {
-          communityName: "",
+          name: "",
           leaderName: "",
           address: "",
-          userSex: "male",
+          isMale: "male",
           username: "",
           password: "",
           phone: "",
@@ -60,7 +60,7 @@
           leaderName: [
             { required: true, message: '负责人姓名不能为空', trigger: 'blur' }
           ],
-          userSex: [
+          isMale: [
             { required: true, message: '性别不能为空', trigger: 'blur' }
           ],
           password: [
@@ -75,7 +75,7 @@
           birthday: [
             { required: true, message: '出生日期不能为空', trigger: 'blur', pattern: /.+/}
           ],
-          communityName: [
+          name: [
             { required: true, message: '社区名不能为空', trigger: 'blur' }
           ],
           address: [
