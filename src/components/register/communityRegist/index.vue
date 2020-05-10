@@ -38,6 +38,7 @@
   </Form>
 </template>
 <script>
+  import util from "../../../util/util";
   export default {
     name: 'communityRegist',
     data () {
@@ -72,7 +73,7 @@
             { required: true, message: '用户名不能为空', trigger: 'blur' }
           ],
           birth: [
-            { required: true, message: '出生日期不能为空', trigger: 'blur' }
+            { required: true, message: '出生日期不能为空', trigger: 'blur', pattern: /.+/}
           ],
           communityName: [
             { required: true, message: '社区名不能为空', trigger: 'blur' }
@@ -91,7 +92,7 @@
             let data = {
               method: 'post',
               params: this.communityForm,
-              url: '/socialWorkerRegister',
+              url: 'http://62.234.138.48:9090/user/createCommity',
             };
             let res = await util.httpReq(data);
             if (res === 'success') {

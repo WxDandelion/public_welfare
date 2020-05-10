@@ -32,6 +32,7 @@
   </Form>
 </template>
 <script>
+  import util from "../../../util/util";
   export default {
     name: 'workerRegist',
     data () {
@@ -64,7 +65,7 @@
             { required: true, message: '身份证号不能为空', trigger: 'blur' }
           ],
           birth: [
-            { required: true, message: '出生日期不能为空', trigger: 'blur' }
+            { required: true, message: '出生日期不能为空', trigger: 'blur', pattern: /.+/}
           ]
         },
       }
@@ -76,7 +77,7 @@
             let data = {
               method: 'post',
               params: this.workerForm,
-              url: '/volunteerRegister',
+              url: 'http://62.234.138.48:9090/user/createSocial',
             };
             let res = await util.httpReq(data);
             if (res === 'success') {

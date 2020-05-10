@@ -56,7 +56,7 @@ util.httpReq = function (data) {
     case 'delete':
     return axios.delete(url, { params }).then(
       (response) => {
-        console.log("jjjjjjj")
+        console.log("jjjjjjj");
         if (parseInt(response.status) === 200) {
           return response.data;
         } else{

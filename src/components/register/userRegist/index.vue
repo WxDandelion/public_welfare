@@ -25,6 +25,7 @@
   </Form>
 </template>
 <script>
+  import util from "../../../util/util";
   export default {
     name: 'userRegist',
     props: {
@@ -59,9 +60,6 @@
     },
     computed: {
     },
-    mounted() {
-      this.getUserForm();
-    },
     methods: {
       handleSubmit () {
         this.$refs.accountForm.validate(async (valid) => {
@@ -69,7 +67,7 @@
             let data = {
               method: 'post',
               params: this.userForm,
-              url: '/accountRegister',
+              url: 'http://62.234.138.48:9090/user/createUser',
             };
             let res = await util.httpReq(data);
             if (res === 'success') {
