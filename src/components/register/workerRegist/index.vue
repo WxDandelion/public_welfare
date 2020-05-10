@@ -77,7 +77,7 @@
             let data = {
               method: 'post',
               params: this.workerForm,
-              url: 'http://62.234.138.48:9090/user/createSocial',
+              url: '/user/createSocial',
             };
             let res = await util.httpReq(data);
             if (res === 'success') {

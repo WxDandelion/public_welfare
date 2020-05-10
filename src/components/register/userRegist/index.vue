@@ -67,7 +67,7 @@
             let data = {
               method: 'post',
               params: this.userForm,
-              url: 'http://62.234.138.48:9090/user/createUser',
+              url: '/user/createUser',
             };
             let res = await util.httpReq(data);
             if (res === 'success') {

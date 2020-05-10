@@ -92,7 +92,7 @@
             let data = {
               method: 'post',
               params: this.communityForm,
-              url: 'http://62.234.138.48:9090/user/createCommity',
+              url: '/user/createCommity',
             };
             let res = await util.httpReq(data);
             if (res === 'success') {
