@@ -58,6 +58,7 @@
             };
             let res = await util.httpReq(data);
             if (res === 'success') {
+              this.$store.commit('changeLoin','100')
               this.$Message.success('成功!');
               this.$router.push({
                 path: '/myWelfare',

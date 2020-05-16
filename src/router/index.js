@@ -9,6 +9,7 @@ import needPublish from '@/page/needPublish';
 import needsDetail from '@/page/needsDetail';
 import myWelfare from '@/page/myWelfare';
 import welfarePublish from '@/page/welfarePublish';
+import store from '@/store';
 
 const Home = r => require.ensure([], () => r(require('@/page/home')), 'Home');
 const Needs = r => require.ensure([], () => r(require('@/page/needs')), 'Needs');
@@ -45,6 +46,9 @@ const router = new Router({
       path: '/myWelfare',
       name: 'myWelfare',
       component: MyWelfare,
+      meta: {
+        auth : true
+      }
     }]
   }, {
     path: '/register',
@@ -55,16 +59,12 @@ const router = new Router({
       name: 'volunteer',
       component: volunteer,
       meta: {
-        needLogin : true
+        auth : true
       },
     },{
       path: '/needPublish',
       name: 'needPublish',
       component: needPublish,
-    },{
-      path: '/myWelfare',
-      name: 'myWelfare',
-      component: MyWelfare,
     },{
       path: '/welfarePublish',
       name: 'welfarePublish',
@@ -94,10 +94,10 @@ router.beforeEach((to, from, next) => {
 */
 
 router.beforeEach((to, from, next) => {
-  if(to.path === '/') {
-    next({
-      path: '/home',
-    })
+  if(to.matched.some( m => m.meta.auth)) {
+    if(store.state.isLogin==='100'){
+      next();
+    }
   } else {
     next();
   }
